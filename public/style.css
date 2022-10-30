@@ -124,12 +124,6 @@ nav .sidebar-button i {
   min-width: 190px;
   padding: 0 15px 0 2px;
 }
-nav .profile-details img {
-  height: 40px;
-  width: 40px;
-  border-radius: 6px;
-  object-fit: cover;
-}
 nav .profile-details .admin_name {
   font-size: 15px;
   font-weight: 500;
@@ -137,17 +131,13 @@ nav .profile-details .admin_name {
   margin: 0 10px;
   white-space: nowrap;
 }
-nav .profile-details i {
-  font-size: 25px;
-  color: #333;
-}
 .home-section .home-content {
   position: relative;
   padding-top: 104px;
 }
 .home-content .overview-boxes {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   /* justify-content: space-between; */
 
   flex-wrap: wrap;
@@ -171,7 +161,7 @@ nav .profile-details i {
 }
 .home-content .box .number {
   display: inline-block;
-  font-size: 25px;
+  font-size: 16px;
   margin-top: 5px;
   font-weight: 500;
 }
@@ -226,24 +216,28 @@ nav .profile-details i {
 }
 .home-content .sales-boxes {
   display: flex;
+  width: 100%;
+  flex-direction: column;
   justify-content: space-between;
   /* padding: 0 20px; */
 }
 
 /* left box */
 .home-content .sales-boxes .recent-sales {
-  width: 100%;
+  width: 90%;
   background: #fff;
-  padding: 20px 30px;
-  margin: 0 20px;
+  padding: 20px;
+  margin: 0 auto;
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-.home-content .sales-boxes .sales-details {
   display: flex;
   /* align-items: center; */
   justify-content: space-between;
 }
+.recent-sales .details li {
+  /* width: 20%; */
+}
+
 .order-header {
   display: flex;
   justify-content: space-between;
@@ -257,37 +251,24 @@ nav .profile-details i {
   font-weight: 500;
   /* margin-bottom: 10px; */
 }
-.sales-boxes .sales-details li.topic {
+.sales-boxes .title {
+  font-size: 20px;
+  padding-left: 70px;
+  margin-bottom: 10px;
+}
+.sales-boxes .topic {
   font-size: 20px;
   font-weight: 500;
 }
-.sales-boxes .sales-details li {
+.sales-boxes li {
   list-style: none;
   margin: 8px 0;
 }
-.sales-boxes .sales-details li a {
+.sales-boxes li a {
   font-size: 18px;
   color: #333;
   font-size: 400;
   text-decoration: none;
-}
-.sales-boxes .box .button {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-}
-.sales-boxes .box .button a {
-  color: #fff;
-  background: #0a2558;
-  padding: 4px 12px;
-  font-size: 15px;
-  font-weight: 400;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.sales-boxes .box .button a:hover {
-  background: #0d3073;
 }
 
 /* Right box */
@@ -383,6 +364,70 @@ nav .profile-details i {
   color: red;
   padding-bottom: 10px;
 }
+.switch-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
 /* Responsive Media Query */
 @media (max-width: 1240px) {
   .login-container {
@@ -453,7 +498,7 @@ nav .profile-details i {
     height: 50px;
     min-width: 40px;
   }
-  .home-content .sales-boxes .sales-details {
+  .home-content .sales-boxes {
     width: 560px;
   }
 }
