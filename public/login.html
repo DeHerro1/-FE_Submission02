@@ -17,15 +17,15 @@
           </div>
           <div class="login-content">
             <p class="error-message"></p>
-            <form method="POSt" onsubmit="submitLogin()">
+            <div>
               <input type="text" class="user-name" placeholder="user name" />
               <input type="password" class="password" placeholder="password" />
 
-              <button class="login-btn" type="submit">
-                <span class="showLogin">Login</span
-                ><span class="hideLogin">Loading...</span>
+              <button class="login-btn" onclick="login()">
+                <span class="showLogin">Login</span>
               </button>
-            </form>
+            </div>
+            <!-- <button onclick="login()">click</button> -->
           </div>
         </div>
       </div>

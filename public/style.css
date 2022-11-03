@@ -99,6 +99,7 @@ nav .sidebar-button i {
 }
 .search-box {
   position: relative;
+  display: flex;
   height: 50px;
   max-width: 550px;
   width: 100%;
@@ -113,6 +114,14 @@ nav .sidebar-button i {
   border-radius: 6px;
   font-size: 18px;
   padding: 0 15px;
+}
+.search-box .search-btn {
+  padding: 0 20px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #2bd47d;
 }
 .home-section nav .profile-details {
   display: flex;
@@ -219,6 +228,7 @@ nav .profile-details .admin_name {
   width: 100%;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 30px;
   /* padding: 0 20px; */
 }
 
@@ -234,10 +244,54 @@ nav .profile-details .admin_name {
   /* align-items: center; */
   justify-content: space-between;
 }
-.recent-sales .details li {
-  /* width: 20%; */
-}
 
+.sellers-header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+}
+.sellers-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  /* padding-bottom: 20px; */
+  height: 500px;
+  overflow-y: scroll;
+}
+.recent-sales .details {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* padding-bottom: 20px; */
+  height: 500px;
+  overflow-y: scroll;
+}
+.recent-sales .order-label {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.recent-sales .details li {
+  /* width: 220px; */
+  height: 100px;
+  /* padding-bottom: 20px; */
+}
+.sellers-list li {
+}
+.pagination-container {
+  padding-top: 10px;
+}
+.toNext {
+  margin-left: 5px;
+  padding-top: 30px;
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 800;
+}
+.processing {
+  color: red;
+}
+.delivered {
+  color: rgb(15, 228, 15);
+}
 .order-header {
   display: flex;
   justify-content: space-between;
@@ -345,6 +399,7 @@ nav .profile-details .admin_name {
 }
 .login-btn {
   height: 100%;
+  cursor: pointer;
   width: 100%;
   outline: none;
   border: 2px solid #efeef1;
@@ -451,6 +506,32 @@ input:checked + .slider:before {
   .home-section nav {
     width: calc(100% - 60px);
     left: 60px;
+  }
+  .sidebar.active ~ .home-section nav {
+    width: calc(100% - 220px);
+    left: 220px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+  .sidebar.active {
+    width: 220px;
+  }
+  .home-section {
+    width: calc(100% - 200px);
+    left: 200px;
+  }
+  .sidebar.active ~ .home-section {
+    /* width: calc(100% - 220px); */
+    overflow: hidden;
+    left: 220px;
+  }
+  .home-section nav {
+    width: calc(100% - 200px);
+    left: 200px;
   }
   .sidebar.active ~ .home-section nav {
     width: calc(100% - 220px);
